@@ -1,6 +1,8 @@
 module "wrapper" {
   source = "../"
 
+  for_each = var.items
+
   length           = try(each.value.length, "")
   keepers          = try(each.value.keepers, null)
   lower            = try(each.value.lower, true)
