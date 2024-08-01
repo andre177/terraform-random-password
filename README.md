@@ -4,8 +4,6 @@ Terraform module which generates a random password using Hashicorp's Random prov
 
 ## Usage
 
-See `examples` directory for working examples to reference:
-
 ### Generating a password specifying special characters to be used
 
 ```hcl
