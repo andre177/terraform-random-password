@@ -1,13 +1,9 @@
-output "bcrypt_hashe" {
+output "bcrypt_hash" {
   value     = random_password.password.bcrypt_hash
   sensitive = true
 }
 
-output "id" {
-  value = random_password.password.id
-}
-
-output "outputs" {
-  value     = random_password.password.id
+output "result" {
+  value     = random_password.password.result
   sensitive = true
 }
