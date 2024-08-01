@@ -1,15 +1,13 @@
-resource "random_password" "random_passwords" {
-  for_each = var.random_passwords
-
-  length           = each.value.length
-  keepers          = each.value.keepers
-  lower            = each.value.lower
-  min_lower        = each.value.min_lower
-  min_upper        = each.value.min_upper
-  min_numeric      = each.value.min_numeric
-  min_special      = each.value.min_special
-  numeric          = each.value.numeric
-  override_special = each.value.override_special
-  special          = each.value.special
-  upper            = each.value.upper
+resource "random_password" "password" {
+  length           = var.length
+  keepers          = var.keepers
+  lower            = var.lower
+  min_lower        = var.min_lower
+  min_upper        = var.min_upper
+  min_numeric      = var.min_numeric
+  min_special      = var.min_special
+  numeric          = var.numeric
+  override_special = var.override_special
+  special          = var.special
+  upper            = var.upper
 }
