@@ -11,7 +11,7 @@ This wrapper does not implement any extra functionality.
 `terragrunt.hcl`:
 ```hcl
 terraform {
-  source = "tfr:///andre177/password/random//wrappers"
+  source = "tfr:///andre177/password/random//wrappers?version=0.0.1"
 }
 
 inputs = {
@@ -28,13 +28,10 @@ inputs = {
 
 ## Usage with Terraform
 ```hcl
-terraform {
-  source = "tfr:///terraform-aws-modules/s3-bucket/aws//wrappers"
-  # Alternative source:
-  # source = "git::git@github.com:terraform-aws-modules/terraform-aws-s3-bucket.git//wrappers?ref=master"
-}
+module "password" {
+  source  = "andre177/password/random"
+  version = "0.0.1"
 
-inputs = {
   items = {
     my-password-1 = {
       length           = 16
